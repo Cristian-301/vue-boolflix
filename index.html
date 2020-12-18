@@ -21,20 +21,27 @@
       </header>
       <!-- /parte superiore: titolo e input -->
       <!-- corpo della pagina -->
-      <main>        
-        <div class="card">
+      <main>
+        <div v-for="movie in movies" class="card">
 
           <div class="front">
-            <img src="https://image.tmdb.org/t/p/w220_and_h330_face/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg" alt="Movie poster">
+            <img :src="'https://image.tmdb.org/t/p/w220_and_h330_face/' + movie.poster_path" alt="Movie poster">
 
             <!-- INFO FILM -->
             <div class="back">
               <div class="info">
                 <ul>
-                  <li><strong>Titolo</strong>: Lorem ipsum dolor.</li>
-                  <li><strong>Titolo originale</strong>: Lorem ipsum dolor sit.</li>
-                  <li><strong>Voto</strong>: Lorem ipsum dolor.</li>
-                  <li><strong>Overview</strong>: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, harum pariatur illo libero!</li>
+                  <li><strong>Titolo</strong>: {{ movie.title }}</li>
+                  <li><strong>Titolo originale</strong>: {{ movie.original_title}}</li>
+                  <li><strong>Lingua originale</strong>: {{ movie.original_language}}</li>
+                  <li><strong>Voto</strong>:
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </li>
+                  <li><strong>Overview</strong>: {{ movie.overview }}</li>
                 </ul>
               </div>
             </div>

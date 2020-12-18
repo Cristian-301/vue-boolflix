@@ -43,6 +43,7 @@ main {
   bottom: 0;
   width: 100%;
   height: 100%;
+  overflow: scroll;
   transition: .5s ease;
   opacity:0;
   color: white;
@@ -60,7 +61,12 @@ li {
   list-style: none;
   margin-bottom: 5px;
   color: lightgray;
+  font-size: 12px;
 }
 li > strong {
   color: #E5E5E5;
+}
+
+li > i {
+  color: gold;
 }
