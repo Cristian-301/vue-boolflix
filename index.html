@@ -23,7 +23,7 @@
 
       <!-- corpo della pagina -->
       <main>
-        <div v-for="movie in movies" class="card"
+        <div v-for="(movie, index) in movies" class="card"
         v-if="movie.video">
           <div class="front">
             <img :src="'https://image.tmdb.org/t/p/w220_and_h330_face/' + movie.poster_path" alt="Movie poster">
@@ -34,7 +34,8 @@
                 <ul>
                   <li><strong>Titolo</strong>: {{ movie.title }}</li>
                   <li><strong>Titolo originale</strong>: {{ movie.original_title}}</li>
-                  <li><strong>Lingua originale</strong>: {{ movie.original_language}} <img class="flag" src="" alt=""></li>
+                  <li><strong>Lingua originale</strong>: {{ movie.original_language}} <img class="flag"
+                     :src="'img/' + movie.original_language + '_flag.png'" alt=""></li>
                   <li><strong>Voto</strong>:
                     <i v-for="n in Math.ceil(movie.vote_average / 2)" class="fas fa-star"></i>
                     <i v-for="n in Math.ceil(4 - movie.vote_average / 2)" class="far fa-star"></i>

@@ -2,7 +2,6 @@ var app = new Vue(
   {
     el: "#root",
     data: {
-      languageFlag: "img/en_flag.png",
       search: "",
       movies: [],
     },
