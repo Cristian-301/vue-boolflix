@@ -70,3 +70,8 @@ li > strong {
 li > i {
   color: gold;
 }
+
+.flag {
+  height: 10px;
+  vertical-align: middle;
+}

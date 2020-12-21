@@ -2,6 +2,7 @@ var app = new Vue(
   {
     el: "#root",
     data: {
+      languageFlag: "img/en_flag.png",
       search: "",
       movies: [],
     },
@@ -13,10 +14,10 @@ var app = new Vue(
         .get("https://api.themoviedb.org/3/movie/popular?api_key=e08df24142fc22f5d0f9fe1a9fbef609")
         .then(function(response){
           self.movies = response.data.results;
-          console.log(self.movies);
+          // console.log(self.movies);
           self.movies.forEach(
             (element) => {
-              console.log(element.title);
+              // console.log(element.title);
 
               if (element.title.toLowerCase().includes(self.search)) {
                 	element.video = true;
@@ -28,10 +29,11 @@ var app = new Vue(
             );
             self.search = "";
 
-
         })
-      }
 
+      },
+
+      
     },
 
   }
