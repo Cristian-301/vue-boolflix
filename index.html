@@ -15,7 +15,7 @@
       <header>
         <h1>BOOLFIX</h1>
         <div id="search">
-          <input type="text" name="" value="" v-model="search">
+          <input @keydown.enter="searchMovie" type="text" name="" value="" v-model="search">
           <button @click="searchMovie" type="button" name="button">Cerca</button>
         </div>
       </header>
@@ -35,11 +35,8 @@
                   <li><strong>Titolo originale</strong>: {{ movie.original_title}}</li>
                   <li><strong>Lingua originale</strong>: {{ movie.original_language}}</li>
                   <li><strong>Voto</strong>:
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+                    <i v-for="n in Math.ceil(movie.vote_average / 2)" class="fas fa-star"></i>
+                    <i v-for="n in Math.ceil(4 - movie.vote_average / 2)" class="far fa-star"></i>
                   </li>
                   <li><strong>Overview</strong>: {{ movie.overview }}</li>
                 </ul>
