@@ -38,6 +38,13 @@ main {
   background-color: lightgray;
 }
 
+.front {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .back {
   position: absolute;
   bottom: 0;

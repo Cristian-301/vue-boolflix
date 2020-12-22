@@ -5,7 +5,8 @@ var app = new Vue(
       search: "",
       movies: [],
       series: [],
-
+      poster: 'https://image.tmdb.org/t/p/w220_and_h330_face/',
+      notAvailable: "https://image.tmdb.org/t/p/w200/wwemzKWzjKYJFfCeiB57q3r4Bcm.png"
     },
     methods: {
       // funzione per ricerca film
@@ -22,9 +23,11 @@ var app = new Vue(
         .then(function (response) {
           self.movies = response.data.results
           console.log("Movies: ", self.movies);
-        })
 
+
+        })
       },
+
       // funzione per ricerca serie
       searchSeries: function () {
         var self = this;
@@ -39,6 +42,7 @@ var app = new Vue(
         .then(function (response) {
           self.series = response.data.results
           console.log("Serie: ", self.series);
+
         })
         self.search = "";
       }

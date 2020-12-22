@@ -23,11 +23,11 @@
 
       <!-- corpo della pagina -->
       <main>
+        <!-- INFO FILM -->
         <div v-for="(movie, index) in movies" class="card">
           <div class="front">
-            <img :src="'https://image.tmdb.org/t/p/w220_and_h330_face/' + movie.poster_path" alt="Movie poster">
+            <img :src="(movie.poster_path == null) ? notAvailable : poster + movie.poster_path" alt="Movie poster">
 
-            <!-- INFO FILM -->
             <div class="back">
               <div class="info">
                 <ul>
@@ -43,14 +43,15 @@
                 </ul>
               </div>
             </div>
-            <!-- /INFO FILM -->
           </div>
         </div>
+        <!-- /INFO FILM -->
+
+        <!-- INFO SERIE -->
         <div v-for="(serie, index) in series" class="card">
           <div class="front">
-            <img :src="'https://image.tmdb.org/t/p/w220_and_h330_face/' + serie.poster_path" alt="Movie poster">
+            <img :src="(serie.poster_path == null) ? notAvailable : poster + serie.poster_path" alt="Movie poster">
 
-            <!-- INFO SERIE -->
             <div class="back">
               <div class="info">
                 <ul>
@@ -66,9 +67,9 @@
                 </ul>
               </div>
             </div>
-            <!-- /INFO SERIE -->
           </div>
         </div>
+        <!-- /INFO SERIE -->
 
       </main>
     </div>
